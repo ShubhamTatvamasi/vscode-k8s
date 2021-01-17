@@ -9,3 +9,8 @@ kubectl patch svc vscode \
 kubectl patch svc vscode \
   --patch='{"spec": {"ports": [{"nodePort": 30100, "port": 8080}]}}'
 ```
+
+
+```bash
+date +%s%N | md5sum | awk '{print $1}'
+```
