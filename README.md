@@ -6,6 +6,11 @@ kubectl create deployment vscode --image=codercom/code-server
 kubectl expose deployment vscode --port=8080 --name=vscode
 ```
 
+get password:
+```bash
+kubectl exec deploy/vscode -- cat /home/coder/.config/code-server/config.yaml
+```
+
 delete everything:
 ```bash
 kubectl delete deploy/vscode svc/vscode ing/vscode
@@ -33,6 +38,7 @@ spec:
             servicePort: 8080
 EOF
 ```
+---
 
 create pod
 ```bash
