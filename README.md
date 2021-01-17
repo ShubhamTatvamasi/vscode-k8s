@@ -24,10 +24,6 @@ kind: Ingress
 metadata:
   name: vscode
 spec:
-  tls:
-    - hosts:
-      - vscode.k8s.shubhamtatvamasi.com
-      secretName: letsencrypt
   rules:
     - host: vscode.k8s.shubhamtatvamasi.com
       http:
