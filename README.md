@@ -23,7 +23,13 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: vscode
+  annotations:
+    nginx.org/websocket-services: vscode
 spec:
+  tls:
+    - hosts:
+      - vscode.k8s.shubhamtatvamasi.com
+      secretName: letsencrypt
   rules:
     - host: vscode.k8s.shubhamtatvamasi.com
       http:
