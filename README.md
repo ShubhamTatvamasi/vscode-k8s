@@ -25,17 +25,17 @@ metadata:
   name: vscode
   annotations:
     nginx.org/websocket-services: vscode
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   tls:
     - hosts:
       - vscode.k8s.shubhamtatvamasi.com
-      secretName: letsencrypt
+      secretName: letsencrypt-vscode
   rules:
     - host: vscode.k8s.shubhamtatvamasi.com
       http:
         paths:
-        - path: /
-          backend:
+        - backend:
             serviceName: vscode
             servicePort: 8080
 EOF
