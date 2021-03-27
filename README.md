@@ -11,10 +11,8 @@ get password:
 kubectl exec deploy/vscode -- cat /home/coder/.config/code-server/config.yaml
 ```
 
-delete everything:
-```bash
-kubectl delete deploy/vscode svc/vscode ing/vscode
-```
+https://vscode.k8s.shubhamtatvamasi.com/proxy/81
+
 
 create ingress value:
 ```bash
@@ -40,7 +38,14 @@ spec:
             servicePort: 8080
 EOF
 ```
+
+delete everything:
+```bash
+kubectl delete deploy/vscode svc/vscode ing/vscode
+```
 ---
+
+### NodePort Install
 
 create pod
 ```bash
